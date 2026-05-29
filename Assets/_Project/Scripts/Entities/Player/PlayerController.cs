@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Entity  
 {
     [Header("Movement")]
     [SerializeField] private float _moveSpeed = 8f;
@@ -17,8 +17,9 @@ public class PlayerController : MonoBehaviour
     public bool IsFalling => _rb.linearVelocity.y < -0.1f;
     public bool IsJumping => _rb.linearVelocity.y > 0.1f;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake(); // Call Entity's Awake to initialize HealthComponent
         _rb = GetComponent<Rigidbody2D>();
     }
 
