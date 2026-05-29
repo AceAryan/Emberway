@@ -12,6 +12,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rb;
     private Vector2 _moveInput;
     private bool _isGrounded;
+    public bool IsGrounded => _isGrounded;
+    public bool IsMoving => Mathf.Abs(_moveInput.x) > 0.1f;
+    public bool IsFalling => _rb.linearVelocity.y < -0.1f;
+    public bool IsJumping => _rb.linearVelocity.y > 0.1f;
 
     private void Awake()
     {
