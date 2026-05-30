@@ -28,6 +28,7 @@ public class PlayerController : Entity
     private void Update()
     {
         CheckGround();
+        _animator.SetBool("IsGrounded", _isGrounded);
     }
 
     // Using FixedUpdate for physics-based movement to ensure consistent behavior regardless of frame rate
