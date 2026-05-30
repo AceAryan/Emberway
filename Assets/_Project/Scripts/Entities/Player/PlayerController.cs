@@ -12,6 +12,7 @@ public class PlayerController : Entity
     private Rigidbody2D _rb;
     private Vector2 _moveInput;
     private bool _isGrounded;
+    private Animator _animator;
     public bool IsGrounded => _isGrounded;
     public bool IsMoving => Mathf.Abs(_moveInput.x) > 0.1f;
     public bool IsFalling => _rb.linearVelocity.y < -0.1f;
@@ -21,6 +22,7 @@ public class PlayerController : Entity
     {
         base.Awake(); // Call Entity's Awake to initialize HealthComponent
         _rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -51,6 +53,13 @@ public class PlayerController : Entity
     private void Move()
     {
         _rb.linearVelocity = new Vector2(_moveInput.x * _moveSpeed, _rb.linearVelocity.y);
+        _animator.SetFloat("Speed", Mathf.Abs(_moveInput.x));
+
+        // Flip the player's sprite based on movement direction
+        if (_moveInput.x > 0)
+            transform.localScale = new Vector3(1, 1, 1);
+        else if (_moveInput.x < 0)
+            transform.localScale = new Vector3(-1, 1, 1);
     }
 
     // Checks if the player is currently touching the ground using a small circle overlap for jump logic
