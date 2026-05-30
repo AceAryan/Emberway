@@ -67,6 +67,7 @@ public class PlayerController : Entity
     private void CheckGround()
     {
         _isGrounded = Physics2D.OverlapCircle(_groundCheck.position, 0.1f, _groundLayer);
+        Debug.Log($"IsGrounded: {_isGrounded}");
     }
 
     // debugging aid to visualize the ground check area in the editor
@@ -76,6 +77,15 @@ public class PlayerController : Entity
         {
             Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(_groundCheck.position, 0.1f);
+        }
+    }
+
+    public void OnAttack(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            Debug.Log("Attack pressed");
+            _animator.SetTrigger("Attack");
         }
     }
 }
