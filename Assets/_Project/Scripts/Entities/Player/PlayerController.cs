@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class PlayerController : Entity  
 {
@@ -8,6 +9,8 @@ public class PlayerController : Entity
     [SerializeField] private float _jumpForce = 16f;
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private LayerMask _groundLayer;
+    [SerializeField] private GameObject _attackHitbox;
+    [SerializeField] private float _attackDuration = 0.3f;
 
     private Rigidbody2D _rb;
     private Vector2 _moveInput;
@@ -86,6 +89,26 @@ public class PlayerController : Entity
         {
             Debug.Log("Attack pressed");
             _animator.SetTrigger("Attack");
+            StartCoroutine(AttackRoutine());
         }
+    }
+
+    private IEnumerator AttackRoutine()
+    {
+        EnableHitbox();
+        yield return new WaitForSeconds(_attackDuration);
+        DisableHitbox();
+    }
+    public void EnableHitbox()
+    {
+        _attackHitbox.SetActive(true);
+        // flip hitbox direction based on player facing
+        float direction = transform.localScale.x;
+        _attackHitbox.transform.localPosition = new Vector3(0.5f * direction, 0, 0);
+    }
+
+    public void DisableHitbox()
+    {
+        _attackHitbox.SetActive(false);
     }
 }
