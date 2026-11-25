@@ -111,4 +111,12 @@ public class PlayerController : Entity
     {
         _attackHitbox.SetActive(false);
     }
+
+    // Called by Entity when HealthComponent raises Died.
+    // The player is NOT destroyed (camera, UI, respawn need it); we just announce the death.
+    public override void Die()
+    {
+        Debug.Log("Player died.");
+        EventBus<PlayerDiedEvent>.Publish(new PlayerDiedEvent());
+    }
 }

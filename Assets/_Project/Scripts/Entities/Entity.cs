@@ -10,6 +10,18 @@ public abstract class Entity : MonoBehaviour
     protected virtual void Awake()
     {
         _health = GetComponent<HealthComponent>();
+
+        // When health hits 0, run this entity's Die().
+        // Die is virtual, so the override (Enemy.Die, PlayerController.Die) is what actually runs.
+        if (_health != null)
+            _health.Died += Die;
+    }
+
+    // Always unsubscribe from events you subscribed to, so no dangling references remain.
+    protected virtual void OnDestroy()
+    {
+        if (_health != null)
+            _health.Died -= Die;
     }
 
     public virtual void TakeDamage(int amount)

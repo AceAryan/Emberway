@@ -84,7 +84,7 @@ public class PlayerStateMachine : MonoBehaviour
         switch (state)
         {
             case PlayerState.Dead:
-                EventBus<PlayerDiedEvent>.Publish(new PlayerDiedEvent());
+                // Death is announced by PlayerController.Die() (single source of truth).
                 break;
         }
     }
