@@ -27,8 +27,8 @@ flowchart LR
 | Character | Role |
 |---|---|
 | Mira | Player character. Teenage girl; neutral, helpful, confident. White bob with teal tips, yellow open-front robe-jacket over charcoal undershirt, red-brown sash. Unarmed at the start; sword, bow and staff introduced later |
-| Baby dragon (red) | Companion; evolves over the game and grants abilities |
-| Hunters (×2) | Prologue antagonists / first enemies; recurring threat (TBD) |
+| Baby dragon (red) | Companion; evolves over the game and grants abilities. Stage 1: cute, tiny wings, walks. Stage 2: hops. Stage 3: flutters |
+| Hunters (×2) | Prologue antagonists / first enemies. Burly, bearded, brimmed hats. **Trapper** (green tunic, feathered hat) throws a rope net. **Gunner** (leather coat, ginger beard) fires a blunderbuss |
 | Dragon parents | Appear at the gateway in the finale |
 
 ## Progression via dragon evolution

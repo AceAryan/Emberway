@@ -16,15 +16,18 @@ Requires Python 3 with Pillow (`pip install pillow`).
 | `palette.py` | Master palette (warm storybook). All assets use only these colours |
 | `pixel.py` | `Canvas` primitives: lines, polygons, ASCII templates, compositing, automatic 1px outline. `sheet()` and `preview()` |
 | `mira.py` | Heroine: pose-driven frame builder and animation pose tables |
-| `build.py` | Writes sheets to their asset paths |
+| `dragon.py` | Baby dragon (stage 1) |
+| `hunter.py` | Shared hunter body with `trapper` and `gunner` variants |
+| `metagen.py` | Writes `.meta` files for new sheets and folders: pre-sliced, Point filter, no compression, 32 PPU, deterministic IDs. Never overwrites an existing `.meta` |
+| `build.py` | Builds every target listed in `TARGETS` |
 
 ## Specifications
 
 | Property | Value |
 |---|---|
 | Pixels per unit | 32 |
-| Character frame | 32×48 px, horizontal strip, pivot at frame centre |
-| Ground contact | Row 38 from top, which aligns with the bottom of a 0.9-unit collider |
+| Frames | Horizontal strip, pivot at frame centre. Size per character (see below) |
+| Ground contact | Chosen so the feet touch the bottom of the character's collider (see below) |
 | Facing | Right (flipped at runtime via `localScale.x`) |
 | Outline | 1px `#2b1d2e`. Limbs in front of the body get their own outline layer |
 | Import | Sprite Mode *Multiple*, Filter *Point*, Compression *None* |
@@ -36,6 +39,11 @@ Animation clips reference sprites by the texture's GUID (in `.meta`) and the spr
 
 ## Characters
 
-| Character | Sheets | Frames |
-|---|---|---|
-| Mira | `Assets/Art/Sprites/Player/mira_{idle,run,jump,attack}.png` | 4 / 4 / 3 / 4 |
+| Character | Sheets | Frame size | Feet row (collider) | Frames |
+|---|---|---|---|---|
+| Mira | `Sprites/Player/mira_{idle,run,jump,attack}.png` | 32×48 | 38 (0.9-unit capsule) | 4 / 4 / 3 / 4 |
+| Baby dragon | `Sprites/Dragon/dragon_baby_{idle,walk}.png` | 32×32 | 23 (0.5-unit collider) | 4 / 4 |
+| Hunter (trapper) | `Sprites/Enemies/Hunters/hunter_trapper_{idle,walk,attack}.png` | 48×48 | 39 (1-unit box) | 4 / 4 / 4 |
+| Hunter (gunner) | `Sprites/Enemies/Hunters/hunter_gunner_{idle,walk,attack}.png` | 48×48 | 39 (1-unit box) | 4 / 4 / 4 |
+
+Later dragon evolution stages (hop, flutter) are added as new pose tables and sheets (`dragon_<stage>_*`).

@@ -13,6 +13,9 @@
 ### Added
 - `Tools/ArtGen` Python pixel-art pipeline.
 - Heroine **Mira** sprite sheets (idle, run, jump, attack), replacing the placeholder Kai.
+- **Baby dragon** stage 1 sprites (idle, walk).
+- **Hunter** sprites, trapper and gunner variants (idle, walk, attack).
+- `.meta` generation for new sprite sheets (pre-sliced pixel-art import settings).
 - `Docs/Story.md`.
 - `Emberway.asmdef` runtime assembly.
 - `Emberway.Tests.EditMode` assembly with `HealthComponentTests`.
