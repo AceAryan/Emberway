@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Emberway — a 2D platformer (help a young dragon find its way home). Unity **6000.3.15f1** (Unity 6.3 LTS), 2D URP, new Input System, Aseprite art via `com.unity.2d.aseprite`.
+Emberway — a 2D action-metroidvania: the player is a teenage girl escorting a rescued red baby dragon (an evolving companion that grants abilities) home across biomes; see `Docs/Story.md`. The user's original story draft is in the Obsidian vault (`story idea.md`). Art is produced by Claude (pixel art, generator scripts kept in the repo); the user gives direction. Unity **6000.3.15f1** (Unity 6.3 LTS), 2D URP, new Input System, Aseprite art via `com.unity.2d.aseprite`.
 
 ## Commands
 
