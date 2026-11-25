@@ -4,6 +4,7 @@ Emberway is a 2D action-platformer with metroidvania structure, built in Unity 6
 
 | Document | Contents |
 |---|---|
+| [Story](Story.md) | Premise, structure, characters, progression |
 | [Roadmap](Roadmap.md) | Development phases and status |
 | [Architecture](Architecture.md) | System overview, data flow, conventions |
 | [Changelog](Changelog.md) | Changes per phase |

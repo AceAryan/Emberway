@@ -8,13 +8,13 @@ Status: ✅ done · 🔨 in progress · ⬜ planned
 | 1 | Movement feel | Coyote time, jump buffering, variable jump height, dash, Cinemachine camera | ⬜ |
 | 2 | Combat core | Attack combo, hurt state with knockback and i-frames, enemy contact damage, health UI | ⬜ |
 | 3 | Deflect & posture | Parry window, posture/stagger meter, perfect-parry rewards, hit-stop | ⬜ |
-| 4 | Enemy AI | Enemy FSM framework, telegraphed attacks, 3+ archetypes | ⬜ |
+| 4 | Enemy AI & companion | Enemy FSM framework, telegraphed attacks, hunter archetypes, dragon companion follow AI | ⬜ |
 | 5 | World | Tilemap rooms, room transitions, save points, save/load, death & respawn | ⬜ |
-| 6 | Progression | Ability-gated areas, skill tree, currency, ScriptableObject-driven data | ⬜ |
+| 6 | Progression | Dragon evolution stages (fireball, light, attack/defence), ability-gated areas, skill tree, ScriptableObject-driven data | ⬜ |
 | 7 | Bosses | Boss framework (phases, attack patterns), first boss | ⬜ |
 | 8 | Presentation | Menus, pause, world map, audio, VFX and game feel | ⬜ |
 | 9 | Narrative | Dialogue and cutscene system | ⬜ |
-| 10 | Release | Polish, performance, build pipeline | ⬜ |
+| 10 | Release | NG+ (memento), polish, performance, build pipeline | ⬜ |
 
 ## Phase 0 — Foundation
 
