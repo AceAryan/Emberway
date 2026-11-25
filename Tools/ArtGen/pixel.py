@@ -63,6 +63,14 @@ class Canvas:
                 for x in range(int(round(xs[i])), int(round(xs[i + 1]))):
                     self.set(x, y, c)
 
+    def ellipse(self, cx, cy, rx, ry, c, mask=None):
+        """Filled ellipse (pixel centres). If `mask` is a Canvas, only paint where mask is opaque."""
+        for y in range(int(cy - ry) - 1, int(cy + ry) + 2):
+            for x in range(int(cx - rx) - 1, int(cx + rx) + 2):
+                if ((x + 0.5 - cx) / rx) ** 2 + ((y + 0.5 - cy) / ry) ** 2 <= 1.0:
+                    if mask is None or mask.get(x, y)[3]:
+                        self.set(x, y, c)
+
     def stamp(self, rows, x0, y0, colors):
         """Draw an ASCII template. '.' = skip; other chars are looked up in `colors`."""
         for dy, row in enumerate(rows):
