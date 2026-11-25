@@ -29,17 +29,41 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject); // persists across scene loads
     }
 
+    private void OnEnable()
+    {
+        EventBus<PlayerDiedEvent>.Subscribe(HandlePlayerDied);
+    }
+
+    private void OnDisable()
+    {
+        EventBus<PlayerDiedEvent>.Unsubscribe(HandlePlayerDied);
+    }
+
     private void Start()
     {
-        TransitionTo(GameState.Boot);
+        // Enter Boot directly (TransitionTo would skip it, since Boot is already the default value),
+        // finish booting, THEN move on. Transitions never happen from inside OnEnter.
+        _currentState = GameState.Boot;
+        OnEnter(GameState.Boot);
+        Debug.Log($"GameState → {GameState.Boot}");
+
+        TransitionTo(GameState.MainMenu);
     }
 
     public void TransitionTo(GameState newState)
     {
+        if (_currentState == newState) return;
+
         OnExit(_currentState);
         _currentState = newState;
-        OnEnter(newState);
         Debug.Log($"GameState → {newState}");
+        OnEnter(newState);
+    }
+
+    // GameManager LISTENS for player death; it does not announce it.
+    private void HandlePlayerDied(PlayerDiedEvent evt)
+    {
+        TransitionTo(GameState.GameOver);
     }
 
     private void OnEnter(GameState state)
@@ -47,7 +71,7 @@ public class GameManager : MonoBehaviour
         switch (state)
         {
             case GameState.Boot:
-                TransitionTo(GameState.MainMenu);
+                // load settings / save data here later
                 break;
             case GameState.Playing:
                 Time.timeScale = 1f;
@@ -56,7 +80,7 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 0f;
                 break;
             case GameState.GameOver:
-                EventBus<PlayerDiedEvent>.Publish(new PlayerDiedEvent());
+                // show game over UI / respawn flow later (Phase 5)
                 break;
             case GameState.GameCompleted:
                 EventBus<GameCompletedEvent>.Publish(new GameCompletedEvent());
