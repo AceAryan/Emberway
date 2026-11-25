@@ -14,6 +14,7 @@ Emberway is a 2D action-platformer with metroidvania structure, built in Unity 6
 | [Entities & Health](Systems/Entities.md) | Entity hierarchy, health and death flow |
 | [Player](Systems/Player.md) | Movement, input, state machine, attack |
 | [Enemies](Systems/Enemies.md) | Enemy base class and archetypes |
+| [Art Pipeline](Systems/ArtPipeline.md) | Code-generated pixel art, specs, asset replacement |
 | **Decisions** | |
 | [0001 — Event bus for cross-system communication](Decisions/0001-event-bus.md) | |
 | [0002 — Inheritance for entities, composition for capabilities](Decisions/0002-entity-hierarchy.md) | |

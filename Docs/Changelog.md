@@ -11,6 +11,9 @@
 - `EventBus.Publish` iterates a snapshot and isolates handler exceptions. All buses are cleared at play-mode start (`EventBusRegistry`).
 
 ### Added
+- `Tools/ArtGen` Python pixel-art pipeline.
+- Heroine **Mira** sprite sheets (idle, run, jump, attack), replacing the placeholder Kai.
+- `Docs/Story.md`.
 - `Emberway.asmdef` runtime assembly.
 - `Emberway.Tests.EditMode` assembly with `HealthComponentTests`.
 - `Docs/` technical documentation.

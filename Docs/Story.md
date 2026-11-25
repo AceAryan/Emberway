@@ -26,7 +26,7 @@ flowchart LR
 
 | Character | Role |
 |---|---|
-| Heroine (name TBD) | Player character |
+| Mira | Player character. Teenage girl; neutral, helpful, confident. White bob with teal tips, yellow open-front robe-jacket over charcoal undershirt, red-brown sash. Unarmed at the start; sword, bow and staff introduced later |
 | Baby dragon (red) | Companion; evolves over the game and grants abilities |
 | Hunters (×2) | Prologue antagonists / first enemies; recurring threat (TBD) |
 | Dragon parents | Appear at the gateway in the finale |
@@ -53,7 +53,7 @@ After the ending, the memento is stored in the starting hut. Breaking it starts 
 - **Phase 9:** prologue and ending cutscenes.
 
 ## Open questions
-- Heroine's name and appearance
+- Weapon progression for Mira (sword, bow, staff): when and how each is acquired
 - Number and themes of biomes (forest, dark biome, …)
 - Do the hunters return later (e.g. as a boss)?
 - What the memento is, and what NG+ changes beyond difficulty
