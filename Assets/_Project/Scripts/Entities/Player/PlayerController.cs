@@ -70,6 +70,7 @@ public class PlayerController : Entity
     private void CheckGround()
     {
         _isGrounded = Physics2D.OverlapCircle(_groundCheck.position, 0.1f, _groundLayer);
+        // TODO (you): Phase 0 Task 5 - this logs 50-200 times per second. Remove it.
         Debug.Log($"IsGrounded: {_isGrounded}");
     }
 
@@ -85,6 +86,7 @@ public class PlayerController : Entity
 
     public void OnAttack(InputValue value)
     {
+        // TODO (you): Phase 0 Task 3 - spamming attack starts overlapping coroutines (see Obsidian note).
         if (value.isPressed)
         {
             Debug.Log("Attack pressed");
@@ -103,6 +105,7 @@ public class PlayerController : Entity
     {
         _attackHitbox.SetActive(true);
         // flip hitbox direction based on player facing
+        // TODO (you): Phase 0 Task 1 - the hitbox ends up BEHIND the player when facing left (see Obsidian note).
         float direction = transform.localScale.x;
         _attackHitbox.transform.localPosition = new Vector3(0.5f * direction, 0, 0);
     }

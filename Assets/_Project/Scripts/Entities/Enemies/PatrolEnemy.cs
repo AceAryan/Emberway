@@ -24,6 +24,7 @@ public class PatrolEnemy : Enemy
             Patrol();
     }
 
+    // TODO (you): Phase 0 Task 2 - enemy jitters in place after chasing; also move velocity writes to FixedUpdate.
     private void Patrol()
     {
         float distanceFromStart = transform.position.x - _startPosition.x;

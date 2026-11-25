@@ -34,6 +34,7 @@ public class PlayerStateMachine : MonoBehaviour
     {
         switch (_currentState)
         {
+            // TODO (you): Phase 0 Task 4 - nothing ever enters Jumping. Add the transition in Idle and Running.
             case PlayerState.Idle:
                 if (_controller.IsMoving)
                     TransitionTo(PlayerState.Running);
