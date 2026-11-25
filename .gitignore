@@ -7,3 +7,6 @@ UserSettings/
 *.slnx
 *.csproj
 .vs/
+# Python (Tools/ArtGen)
+__pycache__/
+*.pyc
