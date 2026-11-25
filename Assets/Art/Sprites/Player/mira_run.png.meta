@@ -4,16 +4,16 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -8856344331359945345
-    second: kai_run_0
+    second: mira_run_0
   - first:
       213: -3633245671980171934
-    second: kai_run_1
+    second: mira_run_1
   - first:
       213: 3184243599283795614
-    second: kai_run_2
+    second: mira_run_2
   - first:
       213: -2877448261777953020
-    second: kai_run_3
+    second: mira_run_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,7 +122,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kai_run_0
+      name: mira_run_0
       rect:
         serializedVersion: 2
         x: 0
@@ -144,7 +144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kai_run_1
+      name: mira_run_1
       rect:
         serializedVersion: 2
         x: 32
@@ -166,7 +166,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kai_run_2
+      name: mira_run_2
       rect:
         serializedVersion: 2
         x: 64
@@ -188,7 +188,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kai_run_3
+      name: mira_run_3
       rect:
         serializedVersion: 2
         x: 96
@@ -225,10 +225,10 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      kai_run_0: -8856344331359945345
-      kai_run_1: -3633245671980171934
-      kai_run_2: 3184243599283795614
-      kai_run_3: -2877448261777953020
+      mira_run_0: -8856344331359945345
+      mira_run_1: -3633245671980171934
+      mira_run_2: 3184243599283795614
+      mira_run_3: -2877448261777953020
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
